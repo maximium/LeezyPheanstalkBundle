@@ -2,7 +2,7 @@
 
 namespace Leezy\PheanstalkBundle\DataCollector;
 
-use Exception;
+use Throwable;
 use Leezy\PheanstalkBundle\PheanstalkLocator;
 use Pheanstalk\Contract\PheanstalkInterface;
 use Pheanstalk\Exception\ConnectionException;
@@ -52,7 +52,7 @@ class PheanstalkDataCollector extends DataCollector
     /**
      * @inheritdoc
      */
-    public function collect(Request $request, Response $response, Exception $exception = null)
+    public function collect(Request $request, Response $response, Throwable $exception = null)
     {
         $defaultPheanstalk = $this->pheanstalkLocator->getDefaultPheanstalk();
 
